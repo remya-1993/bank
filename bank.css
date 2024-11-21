@@ -1,0 +1,483 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+.header {
+    background-color: #0d0d0ddd;
+    border-radius: 13rem;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+}
+.navbar a {
+    color: #aaa;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    gap: 22px;
+    padding: 6px 8px;
+
+}
+
+.navData1 {
+    display: flex;
+    margin-left: 15px;
+    gap: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navData2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    margin-left: 15px;
+    gap: 17px;
+}
+
+a:hover {
+    background-color: #1c1c1c;
+    border-radius: 14px;
+
+}
+
+#a2 :hover {
+    background-color: rgb(195, 255, 0);
+    border-radius: 20px;
+    color: black;
+}
+
+.content {
+    display: flex;
+    border: 1px solid #1c1c1c;
+    border-radius: 30px;
+    background-color: #151613;
+    max-width: 225px;
+}
+
+.llc_card {
+    margin-top: 5px;
+    margin-left: 7px;
+}
+
+.content h5 {
+
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.content1 h1 {
+    color: white;
+    font-size: 32px;
+    align-content: center;
+    width: 70%;
+    margin-top: 20px;
+}
+.content1 span{
+    font-size: 32px;
+    align-content: center;
+    width: 50%;
+}
+
+.content2 p {
+    width: 85%;
+ font-size: 12px;
+ margin-top: 10px;
+ margin-left: 4px;
+}
+
+button {
+
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 2rem;
+    background-color: rgb(195, 255, 0);
+    font-size: 9px;
+
+}
+
+.backcorner {
+    background-image: url(./imgs/Abstract\ Design.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 400px;
+    padding-top: 50px;
+}
+
+.bg-arrows {
+    background-image: url(./imgs/Abstract\ 2.svg);
+    background-repeat: no-repeat;
+    background-position: right 200px;
+    background-size: 400px;
+}
+
+.cn {
+    display: flex;
+}
+
+.boxcontent {
+    border: black;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(97, 95, 95);
+}
+
+.heading {
+    display: flex;
+    gap: 15px;
+}
+
+.heading a {
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.heading2 a {
+    color: rgb(195, 255, 0);
+}
+
+p {
+    color: white;
+    font-size: 10px;
+    margin-left: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cn2 {
+    color: #fff;
+    border: 1px solid #262626;
+    padding: 60px 15px 15px 15px;
+    border-radius: 8px;
+    background-color: #000;
+    z-index: 1;
+    top: 90px;
+    max-width: 300px;
+}
+
+.cn1,
+.cn2 {
+    width: 60%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.rtcornerimg {
+    right: -100px;
+    top: 140px;
+}
+
+.monthly-income {
+    background-color: #22251b;
+    top: -27px;
+    left: -54px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.transaction-wrapper {
+    border: 1px solid #262626;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    z-index: 3;
+    position: relative;
+}
+
+.transaction-wrapper.one {
+    margin: -15px 15px 0px 15px;
+    z-index: 2;
+
+}
+
+.transaction-wrapper.two {
+    margin: -15px 30px 0px 30px;
+    z-index: 1;
+
+}
+
+.text-white {
+    color: #fff;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.font-22 {
+    font-size: 22px;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.font-28 {
+    font-size: 28px;
+}
+
+.fw-bold {
+    font-weight: 600;
+}
+
+.box_mx {
+    border: 1px solid #1c1c1c;
+    padding: 5px;
+    max-width: 120px;
+
+}
+
+.boxmoney {
+    margin-top: 15px;
+}
+
+.box_mx1 {
+    border: 1px solid #1c1c1c;
+    padding: 15px;
+    max-width: 100px;
+}
+
+.subhead {
+    font-size: 5px;
+}
+
+.exchange_box {
+    display: flex;
+    border-color: #000;
+    border-radius: 10px;
+
+}
+
+.boxmoney1 {
+    margin-top: 15px;
+}
+
+h3 {
+    color: rgb(195, 255, 0);
+    font-size: 11px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.exchange {
+    border: 1px solid #1c1c1c;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #22251b;
+    max-width: 250px;
+}
+
+.currency {
+    display: flex;
+    gap: 21px;
+    background-color: #22251b;
+    border: 1px solid #1c1c1c;
+    border-radius: 30px;
+    padding: 7px;
+    max-width: 250px;
+    color: white;
+    font-size: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 98px;
+    margin-left: auto;
+}
+
+.service-heading-wrapper {
+    margin-top: 50px;
+}
+
+.currency1 {
+    margin-top: 6px;
+
+}
+
+h4 {
+    color: white;
+    font-size: 8px;
+    margin-left: 15px;
+}
+
+.icons {
+    display: flex;
+    margin: 50px 0;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.deposit {
+
+    max-width: 300px;
+    max-height: 200px;
+}
+
+
+.topnav .icon {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .monthly-income {
+        left:0;
+    }
+    .d-sm-block {
+        display: block;
+    }
+
+    .d-sm-none {
+        display: none;
+    }
+
+    .cn {
+        flex-direction: column;
+        padding: 30px 0;
+    }
+
+    .cn1,
+    .cn2 {
+        width: 100%;
+    }
+
+    .icons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .topnav .menu {
+        display: none;
+    }
+
+    .topnav a.icon {
+        display: block;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .menu {
+        display: block;
+        text-align: left;
+        position: absolute;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 4px;
+        top: 50px;
+        right: 0;
+        z-index: 1;
+    }
+
+    .topnav.responsive .menu a {
+        display: block;
+        color: #000;
+    }
+    .content{
+        justify-content: center;
+        display: flex;
+    }
+    .content1{
+       justify-content: center;
+        display: flex;
+        font-size: 35px;
+    }
+    .content2{
+        justify-content: center;
+        display: flex; 
+    }
+    .currency{
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+       
+
+
+    }
+    .heading{
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto; 
+        text-align: center;
+    }
+    p{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto; 
+
+}}

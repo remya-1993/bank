@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+
+}
+
+body {
+    background: black;
+    min-height: 100vh;
+}
+
+
+
+.sidebar {
+    width: 210px;
+    position: fixed;
+}
+
+
+
+.navbar {
+    background: #0d0d0ddd;
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px;
+
+}
+
+.navImg {
+    display: flex;
+    gap: 20px;
+    font-size: 30PX;
+}
+
+.navImg span {
+    display: none;
+}
+
+.a_tag1 {
+    list-style: none;
+    gap: 15px;
+    padding: 0 15px;
+    flex-direction: column;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.a_tag1 a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 13px 18px;
+    transition: 0.4s ease;
+    font-size: 13px;
+}
+
+.a_tag1 a:hover {
+    background: rgb(76, 75, 75);
+}
+
+.sub-menu-wrap {
+    position: absolute;
+
+    right: 10%;
+    width: 160px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background: rgb(54, 53, 53);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 90%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: left;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    color: white;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+
+
+.mainBox {
+    min-height: 100vh;
+    padding: 20px;
+    width: calc(100% - 250px);
+    margin-left: 220px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    border: 1PX solid rgb(44, 41, 41);
+    border-radius: 10PX;
+}
+
+h1 {
+    color: rgb(203, 240, 70);
+    font-size: 30px;
+    padding: 15px;
+}
+
+#a1 {
+    padding-top: 40px;
+}
+
+.head img {
+    margin-top: 20px;
+    width: 50px;
+    height: 40px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.card {
+    display: flex;
+    gap: 50px;
+    margin-top: 45px;
+
+}
+
+.deposit {
+    width: 25%;
+    margin-left: 25px;
+    display: flex;
+    border: 1px solid rgb(58, 57, 57);
+    padding: 13px;
+    background: #020202dd;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px rgb(65, 64, 64);
+    cursor: pointer;
+}
+
+.withdraw {
+    width: 25%;
+    margin-left: 25px;
+    display: flex;
+    border: 1px solid rgb(74, 73, 73);
+    padding: 13px;
+    background: #020202dd;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px rgb(65, 64, 64);
+    cursor: pointer;
+}
+
+.balance {
+    width: 25%;
+    margin-left: 25px;
+    display: flex;
+    border: 1px solid rgb(74, 73, 73);
+    padding: 13px;
+    background: #020202dd;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px rgb(65, 64, 64);
+    cursor: pointer;
+}
+
+.dep_card h1,
+h2 {
+    color: white;
+    font-size: 16px;
+   
+}
+
+.withdraw_card h1 {
+    color: white;
+    font-size: 16px;
+}
+
+.balance_card h1 {
+    color: white;
+    font-size: 16px;
+}
+
+.card_2 {
+    display: flex;
+    background: #020202dd;
+    margin-top: 2.5rem;
+    border-radius: 10px;
+    padding: 2rem;
+    gap: 50px;
+}
+
+.card_2 h3 {
+    color: white;
+}
+
+#deposit-form {
+    border: 1px solid rgb(35, 35, 35);
+    width: 30%;
+    height: 170px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#deposit-form label,
+input {
+    font-size: 20px;
+}
+
+#deposit-btn {
+    padding: 6px;
+    border-radius: 8px;
+    background-color: rgb(195, 255, 0);
+}
+
+#withdraw-form {
+    border: 1px solid rgb(35, 35, 35);
+    width: 30%;
+    height: 170px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#withdraw-form label,
+input {
+    font-size: 20px;
+}
+
+#withdraw-btn {
+    padding: 6px;
+    border-radius: 8px;
+    background-color: rgb(195, 255, 0);
+}
+
+.my_card {
+    width: 40%;
+    height: 150px;
+
+
+}
+
+.my_card h1 {
+
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.atmCard {
+    border: 1px solid rgb(32, 31, 31);
+    width: 100%;
+    height: 90%;
+    border-radius: 18px;
+    background: linear-gradient(50deg, #a8a7a7, #779aaf)
+}
+
+span {
+    display: flex;
+    justify-content: right;
+    font-size: 20px;
+    padding: 10px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.atmCard h1 {
+    color: black;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.atmCard h2 {
+    padding: 10px 15px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.atmCard a {
+    text-decoration: none;
+    color: black;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.atm_a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+
+}
+
+.a1 {
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .sidebar {
+        width: 100%;
+        max-height: 50px;
+
+    }
+
+    .navbar {
+        background: #0d0d0ddd;
+        width: 100%;
+        min-height: 10vh;
+
+
+    }
+
+    .navImg {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+
+    .navImg span {
+        display: block;
+    }
+
+    .navData1 {
+        display: none;
+        flex-direction: column;
+
+    }
+
+    .navData1.responsive {
+        display: flex;
+        text-align: right;
+
+    }
+
+    .navImg span {
+        display: block;
+    }
+
+    .navImg span img {
+        width: 30px;
+    }
+
+
+    .mainBox {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .head {
+        margin-top: 100px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+       
+    }
+
+    .deposit {
+        height: 150px;
+        width: 95%;
+        
+    }
+    .withdraw {
+        height: 150px;
+        width: 95%;
+    }
+    .balance {
+        height: 150px;
+        width: 95%;
+    }
+
+    .dep_card h1 {
+        font-size: 30px;
+    }
+    .dep_card h2{
+        font-size: 30px;
+    }
+    .withdraw_card h1{
+        font-size: 30px;
+    }
+
+    .withdraw_card h2{
+        font-size: 30px;
+    }
+    .balance_card h1{
+        font-size: 30px;
+    }
+    .balance_card h2{
+        font-size: 30px;
+    }
+
+    .card_2 {
+        width: 100;
+        
+        flex-direction: column;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        
+
+    }
+    #deposit-form{
+        
+        width: 100%;
+    }
+    #withdraw-form{
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+.atmCard{
+    width: 100%;
+    margin-top: 30px;
+}
+
+    .atmCard h1,
+    h2,
+    a {
+        font-size: 20px;
+
+    }
+
+}

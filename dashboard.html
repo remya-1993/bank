@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+<i class="fa-solid fa-user"></i>
+
+
+<link rel="stylesheet" href="./dashboard.css">
+
+<body>
+
+
+    <div class="container">
+        <aside class="sidebar">
+
+            <div class="header">
+                <div class="navbar">
+                    <div class="navImg">
+                        <img src="./imgs/Logo.svg" alt="" width="100px">
+                        <span>
+                            <img src="./imgs/hamburger.png" onclick="toggleMenu()">
+                        </span>
+
+
+                    </div>
+                    <div class="navData1 topnav" id="myTopnav">
+                        <div class="menu">
+                            <div class="a_tag1">
+                                <a href="./bank.html">Home</a>
+
+                                <a href="">About</a>
+                                <a href="">Money Transfer</a>
+                                <a href="./security.html">Set MPIN</a>
+                                <a href="">Security</a>
+                                <div class="d-none d-sm-block">
+                                    <div id="a1">
+                                        <a href="./signup.html">Settings</a>
+                                    </div>
+                                    <div id="a2">
+                                        <a href="./login.html">Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </aside>
+        <div class="mainBox">
+            <div class="head">
+                <div class="welcome-message">
+                    <h1 id="firstName"></h1>
+                </div>
+                <h1 id="firstName"></h1>
+
+                <img src="./imgs/profile-picture.png" class="user-pic" onclick="profileMenu()">
+
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="./imgs/profile-picture.png" id="profile-picture" onclick="updateProfile()">
+                            <div class="welcome-message">
+                                <h3 id="firstName"></h3>
+                            </div>
+                           
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <p>Edit Profile</p>
+                            <!-- <span>></span> -->
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <p>Settings</p>
+                            <!-- <span>></span> -->
+                        </a>
+                        <a href="#" class="sub-menu-link" onclick="logout()">
+                            <p>Logout</p>
+                            
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="card">
+
+                <div class="deposit">
+                    <div class="dep_card">
+                        <h1>Total Deposit</h1>
+                        <h2>$ 0</h2>
+                    </div>
+                    <img src="./imgs/deposit-money.png" alt="" width="60px" height="60px">
+
+                </div>
+
+                <div class="withdraw">
+
+
+                    <div class="withdraw_card">
+                        <h1>Total Withdraw</h1>
+                        <h2>$ 0</h2>
+                    </div>
+
+                    <img src="./imgs/atm.png" alt="" width="60px" height="60px">
+
+                </div>
+                <div class="balance">
+                    <div class="balance_card">
+                        <h1>Total Balance</h1>
+                        <h2>$ 0</h2>
+                    </div>
+
+                    <img src="./imgs/balance-spendings.png" alt="" width="60px" height="60px">
+
+                </div>
+
+            </div>
+
+            <div class="card_2">
+
+                <!-- Deposit Form -->
+                <form id="deposit-form">
+
+
+                    <label for="deposit-amount" style="color: white;">Deposit Amount:</label>
+                    <br>
+                    <input type="number" id="deposit-amount" required>
+                    <br>
+                    <button id="deposit-btn">Deposit</button>
+                </form>
+                <form id="withdraw-form">
+
+
+                    <label for="withdraw-amount" style="color: white;">Withdraw Amount:</label>
+                    <br>
+                    <input type="number" id="withdraw-amount" required>
+                    <br>
+                    <button id="withdraw-btn">Withdraw</button>
+                </form>
+               
+                <div class="atmCard">
+                    <span><img src="./imgs/Visa-Mastercard.png" alt="" width="100px"></span>
+                    <h1>$31,089.00</h1>
+                    <h2>3251 4563 7645 1234</h2>
+                    <div class="atm_a">
+                        <a class="a1">Remya G</a>
+                        <a href="">07/26</a>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="./dashboard.js"></script>
+    </div>
+</body>
+
+</html>

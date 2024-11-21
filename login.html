@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+
+<link rel="stylesheet" href="./login.css">
+
+<body>
+
+    <div class="bg-arrows">
+        <div class="container">
+            <div class="header">
+                <div class="navbar">
+                    <div class="navImg">
+                        <img src="./imgs/Logo.svg" alt="">
+
+                    </div>
+                    <div class="navData1 topnav" id="myTopnav">
+                        <div class="menu">
+                            <div class="a_tag1">
+                                <a href="./bank.html">Home</a>
+                                <a href="">Careers</a>
+                                <a href="">About</a>
+                                <a href="./security.html">Security</a>
+                                
+    
+                                <div class="d-none d-sm-block">
+                                    <div id="a1">
+                                        <a href="./signup.html">Sign Up</a>
+                                    </div>
+                                    <div id="a2">
+                                        <a href="./login.html">Login</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <img src="./imgs/hamburger.png" alt="Menu">
+                        </a>
+
+                    </div>
+                    <div class="navData2 d-sm-none">
+                        <div id="a1">
+                            <a href="./signup.html">Sign Up</a>
+                        </div>
+
+                        <div id="a2">
+                            <a href="./login.html">Login</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <form id="loginForm">
+                <div class="box_login">
+                    <h2>Login</h2>
+                    <p>Welcome back! Please log in to access your account.</p>
+                    <div class="login_details">
+                        <input type="text" name="" id="email" value="" placeholder="Enter Your Email">
+                        <input type="text" name="" id="password" value="" placeholder="Enter Your Password">
+                    </div>
+                    <h1>Forgot Password?</h1>
+                    <br>
+
+                    <button class="in_btn" type="button" onclick="validateLoginForm()">Login</button>
+                    <br>
+                    <button class="up_btn">Sign Up</button>
+                    <br>
+                    <div class="con_with">
+                        <img src="./imgs/cont with.svg" alt="" width="300px">
+                    </div>
+
+                </div>
+
+
+            </form>
+
+           
+
+
+
+
+        </div>
+    </div>
+    <script src="./login.js"></script>
+
+</body>
