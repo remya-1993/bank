@@ -29,13 +29,38 @@ document.getElementById("firstName").textContent = `Welcome, ${loggedInUser.firs
 // Set MPIN POPUP
 
 let popup = document.getElementById("popup");
-function openPopup(){
+function openPopup() {
     popup.classList.add("open-popup");
 }
-function closePopup(){
+function closePopup() {
     popup.classList.remove("open-popup");
 }
 
+
+
+function setMPIN() {
+    const mpinInputs = document.querySelectorAll(".buttonNumber");
+    const confirmMpinInputs = document.querySelectorAll(".confirm_button_number");
+  
+    const mpin = [];
+    const confirmMpin = [];
+  
+    mpinInputs.forEach((input) => {
+      mpin.push(input.value);
+    });
+  
+    confirmMpinInputs.forEach((input) => {
+      confirmMpin.push(input.value);
+    });
+  
+    if (mpin.join("") === confirmMpin.join("")) {
+      alert("MPIN set successfully!");
+      
+      localStorage.setItem("mpin", mpin.join(""));
+    } else {
+      alert("MPIN and Confirm MPIN do not match. Please try again.");
+    }
+  }
 
 
 
