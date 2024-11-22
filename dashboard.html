@@ -39,8 +39,30 @@
 
                                 <a href="">About</a>
                                 <a href="">Money Transfer</a>
-                                <a href="./security.html">Set MPIN</a>
-                                <a href="">Security</a>
+                                <a href="" onclick="openPopup()">Set MPIN</a>
+
+
+                                <div class="popup" id="popup">
+
+                                    <img src="./imgs/MPIN.png" alt="">
+                                    <h2>Set MPIN</h2>
+                                    <h4>MPIN</h4>
+                                    <input class="button number" type="number">
+                                    <input class="button number" type="number">
+                                    <input class="button number" type="number">
+                                    <input class="button number" type="number">
+                                    <h4>Confirm MPIN</h4>
+                                    <input class="button number" type="number">
+                                    <input class="button number" type="number">
+                                    <input class="button number" type="number">
+                                    <input class="button number" type="number">
+                                    <button type="button" onclick="closePopup()">Proceed</button>
+                                </div>
+
+
+
+
+                                <a href="./security.html">Security</a>
                                 <div class="d-none d-sm-block">
                                     <div id="a1">
                                         <a href="./signup.html">Settings</a>
@@ -50,6 +72,22 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- <div class="popup">
+                                <img src="./imgs/MPIN.png" alt="">
+                                <h2>Set MPIN</h2>
+                                <h4>MPIN</h4>
+                                <input class="button number" type="button">
+                                <input class="button number" type="button">
+                                <input class="button number" type="button">
+                                <input class="button number" type="button">
+                                <h4>Confirm MPIN</h4>
+                                <input class="button number" type="button">
+                                <input class="button number" type="button">
+                                <input class="button number" type="button">
+                                <input class="button number" type="button">
+                                <button type="button">Proceed</button>
+                            </div> -->
 
 
                         </div>
@@ -78,7 +116,7 @@
                             <div class="welcome-message">
                                 <h3 id="firstName"></h3>
                             </div>
-                           
+
                         </div>
                         <hr>
                         <a href="#" class="sub-menu-link">
@@ -91,7 +129,7 @@
                         </a>
                         <a href="#" class="sub-menu-link" onclick="logout()">
                             <p>Logout</p>
-                            
+
                         </a>
                     </div>
 
@@ -155,7 +193,7 @@
                     <br>
                     <button id="withdraw-btn">Withdraw</button>
                 </form>
-               
+
                 <div class="atmCard">
                     <span><img src="./imgs/Visa-Mastercard.png" alt="" width="100px"></span>
                     <h1>$31,089.00</h1>

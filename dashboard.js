@@ -26,6 +26,19 @@ function logout() {
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 document.getElementById("firstName").textContent = `Welcome, ${loggedInUser.firstName}!`;
 
+// Set MPIN POPUP
+
+let popup = document.getElementById("popup");
+function openPopup(){
+    popup.classList.add("open-popup");
+}
+function closePopup(){
+    popup.classList.remove("open-popup");
+}
+
+
+
+
 // deposit and withdrawal
 
 let totalDeposit = 0;
