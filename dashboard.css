@@ -63,51 +63,55 @@ body {
 
 
 .popup {
-   
+
     display: none;
     position: fixed;
     top: 40%;
-    left: 40%;
+    left: 30%;
     text-align: center;
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   
-  }
-  
-  .open-popup {
+z-index: 1000;
+}
+
+.open-popup {
     display: block;
-  }
+}
 
 
-.popup img{
+.popup img {
     width: 100px;
     margin-top: 20px;
 }
-.popup h2{
+
+.popup h2 {
     color: black;
     font-size: 25px;
     font-weight: 400;
     margin: 30px 0 10px;
 }
-.popup h4{
+
+.popup h4 {
     font-size: 13px;
     color: black;
 }
-.popup button{
+
+.popup button {
     width: 100%;
- margin-top: 50px;
- padding: 10px 0;
- background:  rgb(203, 240, 70);   
- border: 0;
- outline: none;
- font-size: 15px;
- border-radius: 5px;
- cursor: pointer;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: rgb(203, 240, 70);
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.popup input{
+
+.popup input {
     width: 40px;
     height: 40px;
     background-color: white;
@@ -117,7 +121,7 @@ body {
     cursor: text;
     color: black;
     border: 1px solid rgb(72, 70, 70);
-   
+
 }
 
 .sub-menu-wrap {
@@ -260,7 +264,7 @@ h1 {
 h2 {
     color: white;
     font-size: 16px;
-   
+
 }
 
 .withdraw_card h1 {
@@ -455,18 +459,20 @@ span {
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-       
+
     }
 
     .deposit {
         height: 150px;
         width: 95%;
-        
+
     }
+
     .withdraw {
         height: 150px;
         width: 95%;
     }
+
     .balance {
         height: 150px;
         width: 95%;
@@ -475,46 +481,52 @@ span {
     .dep_card h1 {
         font-size: 30px;
     }
-    .dep_card h2{
-        font-size: 30px;
-    }
-    .withdraw_card h1{
+
+    .dep_card h2 {
         font-size: 30px;
     }
 
-    .withdraw_card h2{
+    .withdraw_card h1 {
         font-size: 30px;
     }
-    .balance_card h1{
+
+    .withdraw_card h2 {
         font-size: 30px;
     }
-    .balance_card h2{
+
+    .balance_card h1 {
+        font-size: 30px;
+    }
+
+    .balance_card h2 {
         font-size: 30px;
     }
 
     .card_2 {
         width: 100;
-        
+
         flex-direction: column;
         display: block;
         justify-content: center;
         align-items: center;
-        
+
 
     }
-    #deposit-form{
-        
+
+    #deposit-form {
+
         width: 100%;
     }
-    #withdraw-form{
+
+    #withdraw-form {
         width: 100%;
         margin-top: 30px;
     }
-    
-.atmCard{
-    width: 100%;
-    margin-top: 30px;
-}
+
+    .atmCard {
+        width: 100%;
+        margin-top: 30px;
+    }
 
     .atmCard h1,
     h2,
