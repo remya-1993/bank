@@ -64,13 +64,41 @@ function setMPIN() {
 
   // withdraw money with MPIN
 
-  let popup1 = document.getElementById("popup1");
-  function openPopup1() {
-      popup1.classList.add("open-popup1");
+let popup1 = document.getElementById("popup1");
+let storedMpin = localStorage.getItem("mpin");
+
+function openPopup1() {
+  popup1.classList.add("open-popup1");
+}
+
+function closePopup1() {
+  popup1.classList.remove("open-popup1");
+}
+
+function verifyMpin() {
+    const mpinInputs = document.querySelectorAll(".buttonNumber");
+    const enteredMpin = [];
+  
+    mpinInputs.forEach((input) => {
+      enteredMpin.push(input.value);
+    });
+  
+   
+  
+    if (enteredMpin.join("") === storedMpin) {
+      alert("MPIN is correct. Withdrawal processing...");
+      closePopup1();
+    } else {
+      alert("Invalid MPIN. Please try again.");
+    }
   }
-  function closePopup1() {
-      popup1.classList.remove("open-popup1");
-  }
+
+
+
+
+
+
+
 
 
   
