@@ -125,6 +125,59 @@ z-index: 1000;
 
 }
 
+
+
+.popup1 {
+
+    display: none;
+    position: fixed;
+   width: 25%;
+    border-radius: 7px;
+  left: 58%;
+  top: 65%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+}
+.open-popup1 {
+    display: block;
+}
+
+
+
+.popup1 input {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    background-color: white;
+    margin: 10px;
+    font-size: 2rem;
+    border-radius: 6px;
+    cursor: text;
+    color: black;
+    border: 1px solid rgb(72, 70, 70);
+
+}
+.popup1 h2{
+    color: black;
+}
+.popup1 button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: rgb(203, 240, 70);
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 .sub-menu-wrap {
     position: absolute;
 

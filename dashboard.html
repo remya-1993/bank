@@ -178,7 +178,24 @@
                     <br>
                     <input type="number" id="withdraw-amount" required>
                     <br>
-                    <button id="withdraw-btn">Withdraw</button>
+                    <button id="withdraw-btn" onclick="openPopup1()">Withdraw</button>
+
+                    <div class="popup1" id="popup1">
+
+                       
+                        <h2>Enter Your MPIN</h2>
+                
+                        <input class="buttonNumber" type="number" maxlength="1">
+                        <input class="buttonNumber" type="number" maxlength="1">
+                        <input class="buttonNumber" type="number" maxlength="1">
+                        <input class="buttonNumber" type="number" maxlength="1">
+                        
+                        <button type="button" onclick="closePopup1()">Proceed</button>
+                    </div>
+
+
+            
+
                 </form>
 
                 <div class="atmCard">
