@@ -55,6 +55,7 @@ function setMPIN() {
   
     if (mpin.join("") === confirmMpin.join("")) {
       alert("MPIN set successfully!");
+      closePopup();
       
       localStorage.setItem("mpin", mpin.join(""));
     } else {
@@ -93,15 +94,6 @@ function verifyMpin() {
     }
   }
 
-
-
-
-
-
-
-
-
-  
 
 
 
