@@ -38,7 +38,28 @@
                                 <a href="./bank.html">Home</a>
 
                                 <a href="">About</a>
-                                <a href="">Money Transfer</a>
+                                <a href="#" onclick="transfer()">Money Transfer</a>
+                                <div class="transfer_popup" id="transfer_popup">
+
+                                   <label for="">Name on Account :</label>
+                                   <input type="text" name="text">
+                                   <br>
+                                   <label for="">Account Number :</label>
+                                   <input type="number" name="number">
+                                   <br>
+                                  
+                                   <label for="">Amount :</label>
+                                   <input type="number" name="number">
+                                   <br>
+                                   <label for="">Remarks :</label>
+                                   <input type="text" name="text">
+                                   
+                                    <button type="button" onclick="moneyTransfer()">Proceed</button>
+                                    <button type="button" onclick="closed()">Cancel</button>
+                                </div>
+
+
+
                                 <a href="#" onclick="openPopup()">Set MPIN</a>
 
 

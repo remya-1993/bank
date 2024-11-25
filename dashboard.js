@@ -2,23 +2,23 @@
 
 function profileMenu() {
 
-    let subMenu = document.getElementById("subMenu");
-    subMenu.classList.toggle("open-menu");
+  let subMenu = document.getElementById("subMenu");
+  subMenu.classList.toggle("open-menu");
 
 }
 
 // hamburger Menu
 
 function toggleMenu() {
-    var x = document.getElementById("myTopnav");
-    x.classList.toggle("responsive");
+  var x = document.getElementById("myTopnav");
+  x.classList.toggle("responsive");
 }
 
 // redirection - logout in profile picture
 
 function logout() {
-    window.location.assign("login.html")
-    alert("Logged out successfully");
+  window.location.assign("login.html")
+  alert("Logged out successfully");
 }
 
 // firstname changing
@@ -26,44 +26,60 @@ function logout() {
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 document.getElementById("firstName").textContent = `Welcome, ${loggedInUser.firstName}!`;
 
+// Money transfer
+
+let transfer_popup = document.getElementById("transfer_popup");
+function transfer() {
+  transfer_popup.classList.add("transferOpen-popup");
+}
+function closed() {
+  transfer_popup.classList.remove("transferOpen-popup");
+}
+
+
+
+
+
 // Set MPIN POPUP
 
 let popup = document.getElementById("popup");
 function openPopup() {
-    popup.classList.add("open-popup");
+  popup.classList.add("open-popup");
 }
 function closePopup() {
-    popup.classList.remove("open-popup");
+  popup.classList.remove("open-popup");
 }
 
 
 
 function setMPIN() {
-    const mpinInputs = document.querySelectorAll(".buttonNumber");
-    const confirmMpinInputs = document.querySelectorAll(".confirm_button_number");
-  
-    const mpin = [];
-    const confirmMpin = [];
-  
-    mpinInputs.forEach((input) => {
-      mpin.push(input.value);
-    });
-  
-    confirmMpinInputs.forEach((input) => {
-      confirmMpin.push(input.value);
-    });
-  
-    if (mpin.join("") === confirmMpin.join("")) {
-      alert("MPIN set successfully!");
-      closePopup();
-      
-      localStorage.setItem("mpin", mpin.join(""));
-    } else {
-      alert("MPIN and Confirm MPIN do not match. Please try again.");
-    }
+  const mpinInputs = document.querySelectorAll(".buttonNumber");
+  const confirmMpinInputs = document.querySelectorAll(".confirm_button_number");
+
+  const mpin = [];
+  const confirmMpin = [];
+
+  mpinInputs.forEach((input) => {
+    mpin.push(input.value);
+  });
+
+  confirmMpinInputs.forEach((input) => {
+    confirmMpin.push(input.value);
+  });
+
+  if (mpin.join("") === confirmMpin.join("")) {
+    alert("MPIN set successfully!");
+    closePopup();
+
+    localStorage.setItem("mpin", mpin.join(""));
   }
 
-  // withdraw money with MPIN
+  else {
+    alert("MPIN and Confirm MPIN do not match. Please try again.");
+  }
+}
+
+// withdraw money with MPIN
 
 let popup1 = document.getElementById("popup1");
 let storedMpin = localStorage.getItem("mpin");
@@ -77,22 +93,22 @@ function closePopup1() {
 }
 
 function verifyMpin() {
-    const mpinInputs = document.querySelectorAll(".buttonNumber");
-    const enteredMpin = [];
-  
-    mpinInputs.forEach((input) => {
-      enteredMpin.push(input.value);
-    });
-  
-   
-  
-    if (enteredMpin.join("") === storedMpin) {
-      alert("MPIN is correct. Withdrawal processing...");
-      closePopup1();
-    } else {
-      alert("Invalid MPIN. Please try again.");
-    }
+  const mpinInputs = document.querySelectorAll(".buttonNumber");
+  const enteredMpin = [];
+
+  mpinInputs.forEach((input) => {
+    enteredMpin.push(input.value);
+  });
+
+
+
+  if (enteredMpin.join("") === storedMpin) {
+    alert("MPIN is correct. Withdrawal processing...");
+    closePopup1();
+  } else {
+    alert("Invalid MPIN. Please try again.");
   }
+}
 
 
 
@@ -108,39 +124,39 @@ document.querySelector(".withdraw .withdraw_card h2").innerHTML = ` $ ${totalWit
 document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
 
 function depositMoney() {
-    const depositAmount = parseFloat(document.getElementById("deposit-amount").value);
+  const depositAmount = parseFloat(document.getElementById("deposit-amount").value);
 
-    if (isNaN(depositAmount) || depositAmount <= 0) {
-        alert("Invalid Deposit Amount")
-        return;
-    }
+  if (isNaN(depositAmount) || depositAmount <= 0) {
+    alert("Invalid Deposit Amount")
+    return;
+  }
 
-    totalDeposit += depositAmount;
-    totalBalance += depositAmount;
+  totalDeposit += depositAmount;
+  totalBalance += depositAmount;
 
-    document.querySelector(".deposit .dep_card h2").innerHTML = `$ ${totalDeposit}`;
-    document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
+  document.querySelector(".deposit .dep_card h2").innerHTML = `$ ${totalDeposit}`;
+  document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
 
 
-    document.getElementById("deposit-amount").value = "";
+  document.getElementById("deposit-amount").value = "";
 }
 
 function withdrawMoney() {
-    const withdrawAmount = parseFloat(document.getElementById("withdraw-amount").value);
+  const withdrawAmount = parseFloat(document.getElementById("withdraw-amount").value);
 
-    if (isNaN(withdrawAmount) || withdrawAmount <= 0 || withdrawAmount > totalBalance) {
-        alert("Invalid Withdraw Amount")
-        return;
-    }
+  if (isNaN(withdrawAmount) || withdrawAmount <= 0 || withdrawAmount > totalBalance) {
+    alert("Invalid Withdraw Amount")
+    return;
+  }
 
-    totalWithdrawal += withdrawAmount;
-    totalBalance -= withdrawAmount;
+  totalWithdrawal += withdrawAmount;
+  totalBalance -= withdrawAmount;
 
-    document.querySelector(".withdraw .withdraw_card h2").innerHTML = `$ ${totalWithdrawal}`;
-    document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
+  document.querySelector(".withdraw .withdraw_card h2").innerHTML = `$ ${totalWithdrawal}`;
+  document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
 
 
-    document.getElementById("withdraw-amount").value = "";
+  document.getElementById("withdraw-amount").value = "";
 
 }
 
