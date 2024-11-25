@@ -104,8 +104,14 @@ function verifyMpin() {
 
   if (enteredMpin.join("") === storedMpin) {
     alert("MPIN is correct. Withdrawal processing...");
+
+    document.querySelector(".withdraw .withdraw_card h2").innerHTML = `$ ${totalWithdrawal}`;
+    document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
+
+
     closePopup1();
-  } else {
+  } 
+  else {
     alert("Invalid MPIN. Please try again.");
   }
 }
@@ -147,18 +153,20 @@ function withdrawMoney() {
   if (isNaN(withdrawAmount) || withdrawAmount <= 0 || withdrawAmount > totalBalance) {
     alert("Invalid Withdraw Amount")
     return;
-  }
+  } 
 
   totalWithdrawal += withdrawAmount;
   totalBalance -= withdrawAmount;
 
-  document.querySelector(".withdraw .withdraw_card h2").innerHTML = `$ ${totalWithdrawal}`;
-  document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
+  // document.querySelector(".withdraw .withdraw_card h2").innerHTML = `$ ${totalWithdrawal}`;
+  // document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
 
 
   document.getElementById("withdraw-amount").value = "";
 
 }
+
+
 
 document.getElementById("deposit-btn").addEventListener("click", depositMoney);
 document.getElementById("withdraw-btn").addEventListener("click", withdrawMoney);
