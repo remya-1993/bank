@@ -62,8 +62,8 @@ body {
 }
 
 .transfer_popup {
-display: none;
-border-radius: 5px;
+    display: none;
+    border-radius: 5px;
     position: fixed;
     top: 50%;
     left: 40%;
@@ -73,7 +73,7 @@ border-radius: 5px;
     padding: 20px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-z-index: 1000;
+    z-index: 1000;
 }
 
 .transferOpen-popup {
@@ -81,8 +81,8 @@ z-index: 1000;
 }
 
 
-.transfer_popup label{
-font-size: 10px;
+.transfer_popup label {
+    font-size: 10px;
 }
 
 
@@ -127,7 +127,7 @@ font-size: 10px;
     padding: 20px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-z-index: 1000;
+    z-index: 1000;
 }
 
 .open-popup {
@@ -184,18 +184,19 @@ z-index: 1000;
 
     display: none;
     position: fixed;
-   width: 25%;
+    width: 25%;
     border-radius: 7px;
-  left: 58%;
-  top: 65%;
+    left: 58%;
+    top: 65%;
     text-align: center;
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-z-index: 1000;
+    z-index: 1000;
 }
+
 .open-popup1 {
     display: block;
 }
@@ -215,9 +216,11 @@ z-index: 1000;
     border: 1px solid rgb(72, 70, 70);
 
 }
-.popup1 h2{
+
+.popup1 h2 {
     color: black;
 }
+
 .popup1 button {
     width: 100%;
     margin-top: 20px;
@@ -641,5 +644,41 @@ span {
         font-size: 20px;
 
     }
+
+    .popup input {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        background-color: white;
+        margin: 10px;
+        font-size: 2rem;
+        border-radius: 6px;
+        cursor: text;
+        color: black;
+        border: 1px solid rgb(72, 70, 70);
+
+    }
+    .popup1 {
+
+        display: none;
+       
+        width: 100%;
+        border-radius: 7px;
+        align-items: center;
+      
+    }
+    
+    .open-popup1 {
+        display: block;
+    }
+    
+    .popup1 button {
+        width: 90%;
+
+    }
+    
+    
+
+
 
 }
