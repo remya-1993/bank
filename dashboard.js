@@ -36,9 +36,41 @@ function closed() {
   transfer_popup.classList.remove("transferOpen-popup");
 }
 
+function moneyTransfer() {
+  
+  const acnumberInput = document.getElementById("acNumber")
+  const amountInput = document.querySelector('input[name="number"]')
+  const remarksInput = document.querySelector('input[name="text"]')
+
+  const accountNumber = acnumberInput.value;
+  const amount = parseFloat(amountInput.value);
+  const remarks = remarksInput.value;
 
 
+  if (accountNumber === "" || amount === "" || remarks === "") {
+    alert("Please fill in all fields.");
+    return;
+  } else if (isNaN(amount)) {
+    alert("Invalid amount.");
+    return;
+  }
 
+  // totalBalance -= amount;
+
+  console.log("New Total Balance:", totalBalance);
+  document.querySelector(".balance .balance_card h2").innerHTML = `$ ${totalBalance}`;
+
+  alert("Money successfully transferred.");
+  closed();
+
+  const transaction = {
+    accountNumber,
+    amount,
+    remarks
+  };
+  localStorage.setItem("transaction", JSON.stringify(transaction));
+
+}
 
 // Set MPIN POPUP
 
@@ -110,7 +142,7 @@ function verifyMpin() {
 
 
     closePopup1();
-  } 
+  }
   else {
     alert("Invalid MPIN. Please try again.");
   }
@@ -153,13 +185,10 @@ function withdrawMoney() {
   if (isNaN(withdrawAmount) || withdrawAmount <= 0 || withdrawAmount > totalBalance) {
     alert("Invalid Withdraw Amount")
     return;
-  } 
+  }
 
   totalWithdrawal += withdrawAmount;
   totalBalance -= withdrawAmount;
-
-  // document.querySelector(".withdraw .withdraw_card h2").innerHTML = `$ ${totalWithdrawal}`;
-  // document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
 
 
   document.getElementById("withdraw-amount").value = "";
@@ -171,3 +200,16 @@ function withdrawMoney() {
 document.getElementById("deposit-btn").addEventListener("click", depositMoney);
 document.getElementById("withdraw-btn").addEventListener("click", withdrawMoney);
 
+
+
+// atmCard name changing
+
+function updateAtmCardName() {
+  const firstNameElement = document.getElementById("firstName");
+  
+  const atmCardNameElement = document.querySelector(".atmCard .a1");
+
+  atmCardNameElement.textContent = firstNameElement.textContent.replace("Welcome, ", "").replace("!", "");
+}
+
+updateAtmCardName();

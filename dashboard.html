@@ -41,11 +41,9 @@
                                 <a href="#" onclick="transfer()">Money Transfer</a>
                                 <div class="transfer_popup" id="transfer_popup">
 
-                                   <label for="">Name on Account :</label>
-                                   <input type="text" name="text">
-                                   <br>
+                        
                                    <label for="">Account Number :</label>
-                                   <input type="number" name="number">
+                                   <input id="acNumber" type="number" name="number">
                                    <br>
                                   
                                    <label for="">Amount :</label>
@@ -121,9 +119,7 @@
                     <div class="sub-menu">
                         <div class="user-info">
                             <img src="./imgs/profile-picture.png" id="profile-picture" onclick="updateProfile()">
-                            <div class="welcome-message">
-                                <h3 id="firstName"></h3>
-                            </div>
+                            
 
                         </div>
                         <hr>
@@ -225,7 +221,7 @@
                     <h1>$31,089.00</h1>
                     <h2>3251 4563 7645 1234</h2>
                     <div class="atm_a">
-                        <a class="a1">Remya G</a>
+                        <a class="a1" onclick="updateAtmCardName()">Remya G</a>
                         <a href="">07/26</a>
                     </div>
 
