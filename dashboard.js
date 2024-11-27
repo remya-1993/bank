@@ -37,30 +37,23 @@ function closed() {
 }
 
 function moneyTransfer() {
-  
-  const acnumberInput = document.getElementById("acNumber")
-  const amountInput = document.querySelector('input[name="number"]')
-  const remarksInput = document.querySelector('input[name="text"]')
+  const acnumberInput = document.getElementById("acNumber");
+  const amountInput = document.querySelector('input[name="number"]');
+  const remarksInput = document.querySelector('input[name="text"]');
 
   const accountNumber = acnumberInput.value;
   const amount = parseFloat(amountInput.value);
   const remarks = remarksInput.value;
 
-
   if (accountNumber === "" || amount === "" || remarks === "") {
     alert("Please fill in all fields.");
     return;
-  } else if (isNaN(amount)) {
-    alert("Invalid amount.");
-    return;
   }
+  alert("Money successfully transferred.");
 
   // totalBalance -= amount;
+  document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
 
-  console.log("New Total Balance:", totalBalance);
-  document.querySelector(".balance .balance_card h2").innerHTML = `$ ${totalBalance}`;
-
-  alert("Money successfully transferred.");
   closed();
 
   const transaction = {
@@ -69,8 +62,9 @@ function moneyTransfer() {
     remarks
   };
   localStorage.setItem("transaction", JSON.stringify(transaction));
-
 }
+
+
 
 // Set MPIN POPUP
 
@@ -206,7 +200,7 @@ document.getElementById("withdraw-btn").addEventListener("click", withdrawMoney)
 
 function updateAtmCardName() {
   const firstNameElement = document.getElementById("firstName");
-  
+
   const atmCardNameElement = document.querySelector(".atmCard .a1");
 
   atmCardNameElement.textContent = firstNameElement.textContent.replace("Welcome, ", "").replace("!", "");
