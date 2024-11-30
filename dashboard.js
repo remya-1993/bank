@@ -40,6 +40,7 @@ function moneyTransfer() {
   const acnumberInput = document.getElementById("acNumber");
   const amountInput = document.querySelector('input[name="number"]');
   const remarksInput = document.querySelector('input[name="text"]');
+ 
 
   const accountNumber = acnumberInput.value;
   const amount = parseFloat(amountInput.value);
@@ -50,11 +51,12 @@ function moneyTransfer() {
     return;
   }
   alert("Money successfully transferred.");
-
-  // totalBalance -= amount;
-  document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
+  
+  totalBalance -= amount;
+  document.querySelector(".balance .balance_card h2").innerHTML = ` ${totalBalance}`;
 
   closed();
+
 
   const transaction = {
     accountNumber,
@@ -137,9 +139,7 @@ function verifyMpin() {
 
     closePopup1();
   }
-  else {
-    alert("Invalid MPIN. Please try again.");
-  }
+  
 }
 
 
@@ -188,8 +188,6 @@ function withdrawMoney() {
   document.getElementById("withdraw-amount").value = "";
 
 }
-
-
 
 document.getElementById("deposit-btn").addEventListener("click", depositMoney);
 document.getElementById("withdraw-btn").addEventListener("click", withdrawMoney);
