@@ -359,7 +359,7 @@ button {
         border-radius: 4px;
         top: 50px;
         right: 0;
-        z-index: 1;
+        z-index: 500;
     }
 
     .topnav.responsive .menu a {
@@ -473,12 +473,13 @@ button {
     }
 
     .foot_details {
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
+        padding: 5px;
     }
 
     
@@ -486,6 +487,9 @@ button {
         display: flex;
         flex-direction: column;
         padding-bottom: 70px;
+    }
+    .foot_icons{
+        margin-top: 5px;
     }
 
 
