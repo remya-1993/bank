@@ -35,57 +35,43 @@
                     <div class="navData1 topnav" id="myTopnav">
                         <div class="menu">
                             <div class="a_tag1">
-                                <a href="./bank.html">Home</a>
+                                <a href="./index.html">Home</a>
 
                                 <a href="">About</a>
                                 <a href="#" onclick="transfer()">Money Transfer</a>
+
                                 <div class="transfer_popup" id="transfer_popup">
-
-                        
-                                   <label for="">Account Number :</label>
-                                   <input id="acNumber" type="number" name="number">
-                                   <br>
-                                  
-                                   <label for="">Amount :</label>
-                                   <input type="number" name="number">
-                                   <br>
-                                   <label for="">Remarks :</label>
-                                   <input type="text" name="text">
+                                    <div class="popup-wrapper1">
+                                        <label for="transfer-amount">Transfer Amount :</label>
+                                        <input id="transfer-amount" type="number" required>
+                                        <br>
+                                        <label for="Account-number">Enter Account Number:</label>
+                                        <input id="enter-account-number" type="number" required>
+                                        <br>
+                                        <label for="Account-number">Confirm Account Number:</label>
+                                        <input id="confirm-account-number" type="number" required>
+                                        <br>
+                                        <label for="Remarks">Remarks :</label>
+                                        <input id="remarks" type="text" name="text">
+                                        <button id="transfer-money-btn">Proceed</button>
+                                        <!-- <button type="button" onclick="moneyTransfer()">Proceed</button> -->
+                                        <button type="button" onclick="closed()">Cancel</button>
+                                    </div>
                                    
-                                    <button type="button" onclick="moneyTransfer()">Proceed</button>
-                                    <button type="button" onclick="closed()">Cancel</button>
                                 </div>
 
 
 
-                                <a href="#" onclick="openPopup()">Set MPIN</a>
-
-
-                                <div class="popup" id="popup">
-
-                                    <img src="./imgs/MPIN.png" alt="">
-                                    <h2>Set MPIN</h2>
-                                    <h4>MPIN</h4>
-                                    <input class="buttonNumber" type="number" maxlength="1">
-                                    <input class="buttonNumber" type="number" maxlength="1">
-                                    <input class="buttonNumber" type="number" maxlength="1">
-                                    <input class="buttonNumber" type="number" maxlength="1">
-                                    <h4>Confirm MPIN</h4>
-                                    <input class="confirm_button_number" type="number" maxlength="1">
-                                    <input class="confirm_button_number" type="number" maxlength="1">
-                                    <input class="confirm_button_number" type="number" maxlength="1">
-                                    <input class="confirm_button_number" type="number" maxlength="1">
-                                    <button type="button" onclick="setMPIN()">Proceed</button>
-                                </div>
+                                <a href="./loan.html">Money Loan</a>
 
 
                                 <a href="./security.html">Security</a>
                                 <div class="d-none d-sm-block">
                                     <div id="a1">
-                                        <a href="./signup.html">Settings</a>
+                                        <a href="">Settings</a>
                                     </div>
                                     <div id="a2">
-                                        <a href="./login.html">Log Out</a>
+                                        <a href="./login.html" onclick="logout()">Log Out</a>
                                     </div>
                                 </div>
                             </div>
@@ -110,8 +96,9 @@
             <div class="head">
                 <div class="welcome-message">
                     <h1 id="firstName"></h1>
+                    <p id="account-number" style="color: white;"></p>
                 </div>
-                <h1 id="firstName"></h1>
+
 
                 <img src="./imgs/profile-picture.png" class="user-pic" onclick="profileMenu()">
 
@@ -119,7 +106,7 @@
                     <div class="sub-menu">
                         <div class="user-info">
                             <img src="./imgs/profile-picture.png" id="profile-picture" onclick="updateProfile()">
-                            
+
 
                         </div>
                         <hr>
@@ -127,8 +114,8 @@
                             <p>Edit Profile</p>
                             <!-- <span>></span> -->
                         </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Settings</p>
+                        <a href="#" class="sub-menu-link" onclick="dashboard()">
+                            <p>Dashboard</p>
                             <!-- <span>></span> -->
                         </a>
                         <a href="#" class="sub-menu-link" onclick="logout()">
@@ -147,28 +134,27 @@
                 <div class="deposit">
                     <div class="dep_card">
                         <h1>Total Deposit</h1>
-                        <h2>$ 0</h2>
+                        <h2 id="deposit_money">$ 0</h2>
                     </div>
                     <img src="./imgs/deposit-money.png" alt="" width="60px" height="60px">
 
                 </div>
 
                 <div class="withdraw">
-
-
                     <div class="withdraw_card">
                         <h1>Total Withdraw</h1>
-                        <h2>$ 0</h2>
+                        <h2 id="withdrawal-amount1">$ 0</h2>
                     </div>
 
                     <img src="./imgs/atm.png" alt="" width="60px" height="60px">
-
                 </div>
+
                 <div class="balance">
-                    <div class="balance_card">
+                    <div id="balance" class="balance_card">
                         <h1>Total Balance</h1>
-                        <h2>$ 0</h2>
-                        
+                        <div id="balance_amount" style="color: white;" class="balanceAmount">
+                            <span id="updated_bal">$ 0</span>
+                        </div>
                     </div>
 
                     <img src="./imgs/balance-spendings.png" alt="" width="60px" height="60px">
@@ -187,29 +173,37 @@
                     <br>
                     <input type="number" id="deposit-amount" required>
                     <br>
-                    <button id="deposit-btn">Deposit</button>
+                    <button id="deposit-btn" onclick="deposit()">Deposit</button>
+
+
                 </form>
                 <form id="withdraw-form">
 
+                    <div class="withdraw-popup" id="withdraw-popup">
+                        <label for="withdraw-amount" style="color: white;">Withdraw Amount:</label>
+                        <br>
+                        <input type="number" id="withdraw-amount">
+                        <br>
+                        <button type="button"
+                            onclick="openMpinPopup(parseFloat(document.getElementById('withdraw-amount').value))">Withdraw</button>
+                        <button onclick="closeWithdrawPopup()">Cancel</button>
+                    </div>
 
-                    <label for="withdraw-amount" style="color: white;">Withdraw Amount:</label>
-                    <br>
-                    <input type="number" id="withdraw-amount" required>
-                    <br>
-                    <button id="withdraw-btn" onclick="openPopup1()">Withdraw</button>
 
                     <div class="popup1" id="popup1">
 
+                        <div class="popup-wrapper">
 
-                        <h2>Enter Your MPIN</h2>
+                            <h2>Enter Your MPIN</h2>
 
-                        <input class="buttonNumber" type="number" maxlength="1">
-                        <input class="buttonNumber" type="number" maxlength="1">
-                        <input class="buttonNumber" type="number" maxlength="1">
-                        <input class="buttonNumber" type="number" maxlength="1">
+                            <input class="buttonNumber" id="mpin1" type="number" maxlength="1">
+                            <input class="buttonNumber" id="mpin2" type="number" maxlength="1">
+                            <input class="buttonNumber" id="mpin3" type="number" maxlength="1">
+                            <input class="buttonNumber" id="mpin4" type="number" maxlength="1">
+                            <button type="button" onclick="verifyMpin()">Proceed</button>
+                            <button onclick="closePopup1()">Cancel</button>
+                        </div>
 
-                        <button type="button" onclick="verifyMpin()">Proceed</button>
-                        <button onclick="closePopup1()">Cancel</button>
                     </div>
 
 
@@ -240,15 +234,7 @@
 
     </div>
 
-
-
-
-
-
-
-
     <script src="./dashboard.js"></script>
-    </div>
 </body>
 
 </html>

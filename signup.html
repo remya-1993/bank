@@ -10,7 +10,9 @@
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 
 
 
@@ -26,8 +28,8 @@
                     <div class="navData1 topnav" id="myTopnav">
                         <div class="menu">
                             <div class="a_tag1">
-                                <a href="./bank.html">Home</a>
-                                <a href="">Careers</a>
+                                <a href="./index.html">Home</a>
+                                <a href="./dashboard.html">Dashboard</a>
                                 <a href="">About</a>
                                 <a href="./security.html">Security</a>
                                 <div class="d-none d-sm-block">
@@ -62,40 +64,41 @@
 
 
             </div>
-           <form id="signupForm">
-            <div class="box_login">
-                <h2>Sign up</h2>
-                <br>
-                <p>Join our community today! Create an account to unlock exclusive features and personalised
-                    experiences.</p>
-                <div class="signup_details1">
-                    <input type="text" name="" id="firstName" value="Enter First Name">
-                    <input type="text" name="" id="lastName" value="Enter Last Name">
+            <form id="signupForm">
+                <div class="box_login">
+                    <h2>Sign up</h2>
+                    <br>
+                    <p>Join our community today! Create an account to unlock exclusive features and personalised
+                        experiences.</p>
+                    <div class="signup_details1">
+                        <input type="text" name="" id="firstName" placeholder="Enter Your Name">
+                        <input type="text" name="" id="phoneNumber" placeholder="Enter phone number">
+                    </div>
+
+                    <div class="signup_details2">
+                        <input type="text" name="" id="email" placeholder="Enter Your Email">
+                        <input type="text" name="" id="password" placeholder="Enter Your Password">
+
+                    </div>
+                    <br>
+                    <br>
+                    <button class="in_btn" type="submit">Sign Up</button>
+                    <br>
+                    <button class="up_btn" onclick="loginpage()">Login</button>
+                    <br>
+                    <div class="con_with">
+                        <img src="./imgs/cont with.svg" alt="" width="300px">
+                    </div>
                 </div>
 
-                <div class="signup_details2">
-                    <input type="text" name="" id="email" value="Enter Your Email">
-                    <input type="text" name="" id="password" value="Enter Your Password">
+            </form>
 
-                </div>
-                <br>
-                <br>
-                <button class="in_btn" type="submit">Sign Up</button>
-                <br>
-                <button class="up_btn">Login</button>
-                <br>
-                <div class="con_with">
-                    <img src="./imgs/cont with.svg" alt="" width="300px">
-                </div>
-            </div>
 
-           </form>
-        
-            
-       
+
 
         </div>
     </div>
     <script src="./signup.js"></script>
 
 </body>
+</html>

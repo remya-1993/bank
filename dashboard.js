@@ -1,10 +1,29 @@
+let userEmail = localStorage.getItem("loggedInUser");
+if (userEmail === null || userEmail === "") {
+  window.location.assign("login.html");
+}
+
+userEmail = localStorage.getItem("loggedInUser");
+let users = JSON.parse(localStorage.getItem("users"));
+let userData;
+for (var i = 0; i < users.length; i++) {
+  console.log(users[i].email)
+  if (userEmail == users[i].email) {
+    userData = users[i]
+  }
+}
+
+document.getElementById("balance_amount").innerHTML =  `$ ${userData.balance}`;
+document.getElementById("withdrawal-amount1").innerHTML =  `$ ${userData.withdrawal}`;
+document.getElementById("deposit_money").innerHTML =  `$ ${userData.deposit}`;
+document.getElementById("firstName").innerHTML = `Welcome, ${userData.firstName}!`;
+document.getElementById("account-number").innerHTML = `Your Account Number: ${userData.accountNumber}`;
+
 // profile picture
 
 function profileMenu() {
-
   let subMenu = document.getElementById("subMenu");
   subMenu.classList.toggle("open-menu");
-
 }
 
 // hamburger Menu
@@ -14,19 +33,21 @@ function toggleMenu() {
   x.classList.toggle("responsive");
 }
 
+// dashboard redirection
+
+function dashboard() {
+  window.location.assign("dashboard.html")
+}
+
 // redirection - logout in profile picture
 
 function logout() {
   window.location.assign("login.html")
   alert("Logged out successfully");
+  localStorage.removeItem("loggedInUser");
 }
 
-// firstname changing
-
-const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-document.getElementById("firstName").textContent = `Welcome, ${loggedInUser.firstName}!`;
-
-// Money transfer
+// Money transfer popup
 
 let transfer_popup = document.getElementById("transfer_popup");
 function transfer() {
@@ -36,172 +57,137 @@ function closed() {
   transfer_popup.classList.remove("transferOpen-popup");
 }
 
-function moneyTransfer() {
-  const acnumberInput = document.getElementById("acNumber");
-  const amountInput = document.querySelector('input[name="number"]');
-  const remarksInput = document.querySelector('input[name="text"]');
- 
+// money transfer
 
-  const accountNumber = acnumberInput.value;
-  const amount = parseFloat(amountInput.value);
-  const remarks = remarksInput.value;
+document.getElementById("transfer-money-btn").addEventListener("click", (event) => {
+  event.preventDefault();
 
-  if (accountNumber === "" || amount === "" || remarks === "") {
-    alert("Please fill in all fields.");
+  const transferAmount = parseFloat(document.getElementById('transfer-amount').value);
+  const enteraccountNumber = parseInt(document.getElementById('enter-account-number').value);
+  const confirmaccountNumber = parseInt(document.getElementById('confirm-account-number').value);
+  const remarks = document.getElementById('remarks').value;
+
+  let users = JSON.parse(localStorage.getItem("users"));
+  userEmail = localStorage.getItem("loggedInUser");
+
+  const sender = users.find(user => user.email === userEmail);
+  const recipient = users.find(user => user.accountNumber === enteraccountNumber);
+
+  if (enteraccountNumber !== confirmaccountNumber) {
+    alert("Account numbers do not match!");
     return;
   }
-  alert("Money successfully transferred.");
-  
-  totalBalance -= amount;
-  document.querySelector(".balance .balance_card h2").innerHTML = ` ${totalBalance}`;
 
-  closed();
-
-
-  const transaction = {
-    accountNumber,
-    amount,
-    remarks
-  };
-  localStorage.setItem("transaction", JSON.stringify(transaction));
-}
-
-
-
-// Set MPIN POPUP
-
-let popup = document.getElementById("popup");
-function openPopup() {
-  popup.classList.add("open-popup");
-}
-function closePopup() {
-  popup.classList.remove("open-popup");
-}
-
-
-
-function setMPIN() {
-  const mpinInputs = document.querySelectorAll(".buttonNumber");
-  const confirmMpinInputs = document.querySelectorAll(".confirm_button_number");
-
-  const mpin = [];
-  const confirmMpin = [];
-
-  mpinInputs.forEach((input) => {
-    mpin.push(input.value);
-  });
-
-  confirmMpinInputs.forEach((input) => {
-    confirmMpin.push(input.value);
-  });
-
-  if (mpin.join("") === confirmMpin.join("")) {
-    alert("MPIN set successfully!");
-    closePopup();
-
-    localStorage.setItem("mpin", mpin.join(""));
+  if (!recipient) {
+    alert("Account number not found!");
+    return;
   }
 
-  else {
-    alert("MPIN and Confirm MPIN do not match. Please try again.");
+  if (transferAmount > sender.balance) {
+    alert("Insufficient balance!");
+    return;
   }
-}
+
+  sender.balance -= transferAmount;
+  recipient.balance += transferAmount;
+  localStorage.setItem("users", JSON.stringify(users));
+  document.getElementById("balance_amount").innerHTML = `$ ${sender.balance}`;
+
+  alert("Money transferred successfully!");
+  return;
+});
 
 // withdraw money with MPIN
 
-let popup1 = document.getElementById("popup1");
-let storedMpin = localStorage.getItem("mpin");
+let withdrawalAmount;
 
-function openPopup1() {
+function openMpinPopup(amount) {
+  withdrawalAmount = amount;
   popup1.classList.add("open-popup1");
 }
 
-function closePopup1() {
-  popup1.classList.remove("open-popup1");
-}
-
 function verifyMpin() {
-  const mpinInputs = document.querySelectorAll(".buttonNumber");
-  const enteredMpin = [];
+  const mpin1 = document.getElementById("mpin1").value;
+  const mpin2 = document.getElementById("mpin2").value;
+  const mpin3 = document.getElementById("mpin3").value;
+  const mpin4 = document.getElementById("mpin4").value;
+  const enteredMpin = mpin1 + mpin2 + mpin3 + mpin4;
 
-  mpinInputs.forEach((input) => {
-    enteredMpin.push(input.value);
-  });
+  userEmail = localStorage.getItem("loggedInUser");
+  const users = JSON.parse(localStorage.getItem("users"));
+  const user = users.find(user => user.email === userEmail);
 
-
-
-  if (enteredMpin.join("") === storedMpin) {
-    alert("MPIN is correct. Withdrawal processing...");
-
-    document.querySelector(".withdraw .withdraw_card h2").innerHTML = `$ ${totalWithdrawal}`;
-    document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
-
-
-    closePopup1();
+  if (!user) {
+    alert("User not found");
+    return;
   }
-  
+
+  const storedMpin = user.mpin;
+  let storedBalance = user.balance;
+  let totalWithdrawal = user.withdrawal || 0;
+  const withdrawAmount = parseFloat(document.getElementById("withdraw-amount").value);
+
+  if (enteredMpin === storedMpin.toString()) {
+    if (withdrawAmount > 0 && withdrawAmount <= storedBalance) {
+      storedBalance -= withdrawAmount;
+      totalWithdrawal += withdrawAmount;
+      user.balance = storedBalance;
+      user.withdrawal = totalWithdrawal;
+      localStorage.setItem("users", JSON.stringify(users));
+      document.getElementById("balance_amount").innerHTML = `$ ${storedBalance}`;
+      document.getElementById("withdrawal-amount1").innerHTML = `$ ${totalWithdrawal}`;
+
+      alert("Amount withdrawal successfully done ");
+    } else {
+      alert("Insufficient balance or invalid withdrawal amount.");
+    }
+  } else {
+    alert("Invalid MPIN");
+  }
 }
 
-
-
-
-// deposit and withdrawal
+// money deposit
 
 let totalDeposit = 0;
 let totalWithdrawal = 0;
 let totalBalance = 0;
 
-document.querySelector(".deposit .dep_card h2").innerHTML = `$ ${totalDeposit}`
-document.querySelector(".withdraw .withdraw_card h2").innerHTML = ` $ ${totalWithdrawal}`;
-document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
-
-function depositMoney() {
+function deposit() {
   const depositAmount = parseFloat(document.getElementById("deposit-amount").value);
-
   if (isNaN(depositAmount) || depositAmount <= 0) {
-    alert("Invalid Deposit Amount")
+    alert("Invalid Deposit Amount");
+    return;
+  } else {
+    alert("Amount deposit successfully done")
+  }
+  userEmail = localStorage.getItem("loggedInUser");
+  const users = JSON.parse(localStorage.getItem("users"));
+  const user = users.find(user => user.email === userEmail);
+  if (!user) {
+    alert("User not found");
     return;
   }
-
-  totalDeposit += depositAmount;
-  totalBalance += depositAmount;
-
-  document.querySelector(".deposit .dep_card h2").innerHTML = `$ ${totalDeposit}`;
-  document.querySelector(".balance .balance_card h2").innerHTML = ` $ ${totalBalance}`;
-
-
+  let storedBalance = user.balance || 0;
+  let storedDeposit = user.deposit || 0;
+  storedBalance += depositAmount;
+  storedDeposit += depositAmount;
+  user.balance = storedBalance;
+  user.deposit = storedDeposit;
+  localStorage.setItem("users", JSON.stringify(users));
+  document.getElementById("deposit_money").innerHTML = `$ ${storedDeposit}`;
+  document.getElementById("balance_amount").innerHTML = `$ ${storedBalance}`;
   document.getElementById("deposit-amount").value = "";
 }
-
-function withdrawMoney() {
-  const withdrawAmount = parseFloat(document.getElementById("withdraw-amount").value);
-
-  if (isNaN(withdrawAmount) || withdrawAmount <= 0 || withdrawAmount > totalBalance) {
-    alert("Invalid Withdraw Amount")
-    return;
-  }
-
-  totalWithdrawal += withdrawAmount;
-  totalBalance -= withdrawAmount;
-
-
-  document.getElementById("withdraw-amount").value = "";
-
-}
-
-document.getElementById("deposit-btn").addEventListener("click", depositMoney);
-document.getElementById("withdraw-btn").addEventListener("click", withdrawMoney);
-
-
 
 // atmCard name changing
 
 function updateAtmCardName() {
+
   const firstNameElement = document.getElementById("firstName");
-
-  const atmCardNameElement = document.querySelector(".atmCard .a1");
-
+  const atmCardNameElement = document.querySelector(".a1");
   atmCardNameElement.textContent = firstNameElement.textContent.replace("Welcome, ", "").replace("!", "");
 }
-
 updateAtmCardName();
+
+
+

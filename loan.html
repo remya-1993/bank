@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Loan</title>
+</head>
+<link rel="stylesheet" href="./loan.css">
+
+<body style="background-color: #000;">
+    <div class="background">
+        <div class="container">
+            <div class="header">
+                <div class="navbar">
+                    <img src="./imgs/Logo.svg" alt="">
+
+                    <img src="./imgs/profile-picture.png" class="user-pic" onclick="profileMenu()" width="40px">
+
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                                <img src="./imgs/profile-picture.png" id="profile-picture">
+
+
+                            </div>
+                            <hr>
+                            <a href="#" class="sub-menu-link">
+                                <p>Edit Profile</p>
+                                <!-- <span>></span> -->
+                            </a>
+                            <a href="#" class="sub-menu-link" onclick="dashboard()">
+                                <p>Dashboard</p>
+                                <!-- <span>></span> -->
+                            </a>
+                            <a href="#" class="sub-menu-link" onclick="logout()">
+                                <p>Logout</p>
+
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="content">
+                <div class="text">
+                    <p>Personal Bank Loan <br> From Up to <span style="color: rgb(195, 255, 0);">$ 120,000</span></p>
+                    <ul type="circle" class="list">
+                        <li>Compare safely and securely</li>
+                        <li>We save time and money</li>
+                        <li>We compare offers on market</li>
+                    </ul>
+
+                    <div class="loanBox">
+                        <h1>Loan Payment</h1>
+                        <div class="loanDetails" id="loanDetails">
+                            <label for="">Total Loan Amount:</label>
+                            <span id="loanAmount" style="color: white;">0</span>
+                            <br>
+                            <br>
+                            <label for="">Pay Loan:</label>
+                            <br>
+                            <br>
+                            <input type="number" name="amount" id="payloanAmount" placeholder="Enter Amount">
+                            <br>
+                            <br>
+                            <label for="">Pending Loan Amount:</label>
+                            <span id="pendingAmount" style="color: white;">0</span>
+                            <br>
+                            <br>
+                            <button onclick="proceed()">Proceed</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+                    <h1>Credit Request</h1>
+                    <div class="cardDetails" id="cardDetails">
+                        <input type="number" name="amountLoan" id="amountLoan" placeholder="Loan Amount">
+                        <br>
+                        <br>
+                        <input type="text" name="email" id="email" placeholder="E-mail">
+                        <br>
+                        <br>
+                        <input type="number" name="" id="phonenumber" placeholder="Phone number">
+                        <br>
+                        <br>
+                        <input type="number" name="" id="mpin" placeholder="MPIN">
+                        <br>
+                        <br>
+                        <button onclick="request()">Money Request</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="./loan.js"></script>
+
+</body>
+
+</html>
