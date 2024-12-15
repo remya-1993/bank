@@ -611,13 +611,13 @@ span {
 
     .deposit {
         height: 150px;
-        width: 95%;
+        width: 100%;
 
     }
 
     .withdraw {
         height: 150px;
-        width: 95%;
+        width: 100%;
     }
 
     .balance {
@@ -626,27 +626,30 @@ span {
     }
 
     .dep_card h1 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .dep_card h2 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .withdraw_card h1 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .withdraw_card h2 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .balance_card h1 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .balance_card h2 {
-        font-size: 30px;
+        font-size: 20px;
+    }
+    #updated_bal{
+        font-size: 20px;
     }
 
     .card_2 {
@@ -713,6 +716,9 @@ span {
     .popup1 button {
         width: 90%;
 
+    }
+    .withdraw-popup input {
+        width: 100%;
     }
 
 
