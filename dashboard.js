@@ -5,7 +5,7 @@ if (userEmail === null || userEmail === "") {
 
 userEmail = localStorage.getItem("loggedInUser");
 let users = JSON.parse(localStorage.getItem("users"));
-let userData;
+let userData; 
 for (var i = 0; i < users.length; i++) {
   console.log(users[i].email)
   if (userEmail == users[i].email) {
